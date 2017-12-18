@@ -9,14 +9,21 @@ body {
 
 
 .header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50rem;
   margin-top: 2rem;
   }
 
 .logo {
   background: grey;
-  
+  height: 3rem;
+  width: 10rem;
+  margin-left: 4rem;
+}
+
+.logo img {
+  width: 100%
 }
 
 .search {
@@ -127,4 +134,18 @@ body {
 .thriller {
   grid-column: 5;
   grid-row: 2;
+}
+
+.videoContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem;
+  margin: 0 4rem;
+  margin-top: 5rem;
+}
+
+.video {
+  height: 250px;
+  width: 100%;
+  background-color: grey;
 }
