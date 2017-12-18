@@ -4,40 +4,82 @@
     <meta charset="UTF-8">
     <link href="skeleton.css" rel="stylesheet">
     <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
     <title>FanHub</title>
 </head>
 <body>
+  <section class="sideMenu">
+    <h2 class="menuTitle">Menu</h2>
+    <ul class="menuList">
+      <a class="menuListItems" href="#">
+        <li>Tendance</li>
+      </a>
+      <a class="menuListItems" href="#">
+        <li>Recent</li>
+      </a>
+      <a class="menuListItems" href="#">
+        <li>Genre</li>
+      </a>
+      <a class="menuListItems" href="#">
+        <li>Favoris</li>
+      </a>
+      <a class="menuListItems" href="#">
+        <li>Contacter</li>
+      </a>
+    </ul>
+  </section>
 
-<header>
+<header class="header">
   <div class="logo">
-
+    <img src="logo.png" alt="">
   </div>
-
+  <div class="search">
+    <input type="search" placeholder="Search" class="searchInput">
+  </div>
 </header>
 
 
+<section>
+  <div class="recent">
+    <div class="film1 film">
 
-
-
-
-
-<div class="player-container">
-    <video class="video-player">
-        <source src="big_buck_bunny.mp4" type="video/mp4">
-    </video>
-
-    <div class="media-controls container">
-        <div class="buffer row">
-            <div class="twelve columns slider"><div class="cursor"></div></div>
-        </div>
-        <div class="buttons row">
-            <div class="play three columns"><img src="play.png"></div>
-            <div class="mute three columns"><img src="mute.png"></div>
-            <div class="six columns volumeSlider"><input class="volume" type="range" min="0" max="1" step="0.01" value="0.5"></div>
-
-        </div>
     </div>
-</div>
+    <div class="film2 film">
+
+
+    </div>
+    <div class="film3 film">
+
+    </div>
+  </div>
+</section>
+
+<section class="genre">
+  <h2 class="genreTitle">Genre</h2>
+  <ul class="genreList">
+    <a class="action tags" href="#">
+      <li>Action</li>
+    </a>
+    <a class="animation tags" href="#">
+      <li>Animation</li>
+    </a>
+    <a class="comedy tags" href="#">
+      <li>Comedy</li>
+    </a>
+    <a class="horror tags" href="#">
+      <li>Horror</li>
+    </a>
+    <a class="thriller tags" href="#">
+      <li>Thriller</li>
+    </a>
+  </ul>
+</section>
+
+<section class="videoContainer">
+  <div class="video1"></div>
+  <div class="video2"></div>
+  <div class="video3"></div>
+</section>
 
 <script src="main.js"></script>
 </body>
