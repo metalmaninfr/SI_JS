@@ -106,6 +106,10 @@ body {
   animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+.sideMenuDisplay {
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+}
+
 
 .menuTitle {
   text-align: center;
@@ -205,11 +209,141 @@ body {
   margin-top: 5rem;
 }
 
-.video {
-  height: 250px;
+.videoGrid {
+  height: 400px;
   width: 100%;
   background-color: grey;
+  color: white;
 }
+
+.hoverVideoContainer {
+  display: none;
+}
+
+.videoGrid:hover>.hoverVideoContainer {
+  display: block;
+}
+
+.videoGrid:hover {
+  transform: scale(1.1);
+}
+
+.videoGrid {
+  position: relative;
+}
+
+.titleMovie {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 40%;
+}
+
+
+
+
+
+.overlay {
+  display: fixed;
+  width: 80%;
+  margin: 0 auto;
+  color: #f2f2f2;
+}
+
+
+.overlayGrid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.retour {
+  background: grey;
+  grid-column: 1 / 10;
+  grid-row: 1;
+}
+
+
+.overlayDescription {
+  grid-column: 4 / 6;
+  grid-row: 2;
+  background: yellow;
+  color: #f2f2f2;
+}
+
+.overlayComments {
+  grid-column: 6 / 8;
+  grid-row: 2;
+  background: red;
+  color: #f2f2f2;
+}
+
+.overlayTrailer {
+  grid-column: 8 / 10;
+  grid-row: 2;
+  background: green;
+  color: #f2f2f2;
+}
+
+.imgContainer {
+  grid-column: 1 / 4;
+  grid-row: 3 / 12;
+  background: grey;
+  height: 400px;
+  width: 100%;
+}
+
+.overlayMovieTitle {
+  background: cyan;
+  grid-row: 4;
+  grid-column: 4 / 7;
+  height: 30px;
+}
+
+.overlayStars {
+  background: yellow;
+  grid-row: 4;
+  grid-column: 7 / 9;
+  height: 30px;
+}
+
+.overlayRating {
+  background: blue;
+  height: 30px;
+  grid-column: 4;
+  grid-row: 5;
+}
+
+.overlayDuration {
+  background: red;
+  height: 30px;
+  grid-column: 5 / 7;
+  grid-row: 5;
+}
+
+.overlayDate {
+  background: green;
+  height: 30px;
+  grid-column: 7 / 9;
+  grid-row: 5;
+}
+
+.overlayDescription2 {
+  background: brown;
+  height: 200px;
+  grid-column: 4 / 9;
+  grid-row: 7 / 10;
+}
+
+.overlayGenre {
+  background: yellow;
+  height: 30px;
+  grid-column: 4 / 9;
+  grid-row: 11;
+
+}
+
 
 
 @keyframes slide-in-right {
