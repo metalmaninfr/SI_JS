@@ -130,13 +130,32 @@ body {
   margin-left: 2rem;
 }
 
+hr {
+  width: 80%;
+  border: none;
+  height: 2px;
+  background: #277e7f;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.recentContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.recentTitle {
+  color: #f2f2f2;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
 .recent {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 4rem;
   margin: 0 4rem;
-  margin-top: 20rem;
 }
+
 
 
 .film {
@@ -145,11 +164,21 @@ body {
     background: grey;
 }
 
+.genreContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .genre {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   margin-top: 5rem;
   grid-gap: 3rem;
+}
+
+.genreTitle2 {
+  color: #f2f2f2;
+  font-size: 2rem;
 }
 
 .genreTitle {
@@ -223,6 +252,17 @@ input[type="checkbox"], input[type="radio"] {
 .loisir {
   grid-column: 6;
   grid-row: 2;
+}
+
+.containerVideo {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.videoTitle2 {
+  color: #f2f2f2;
+  font-size: 2rem;
+  margin-left: 8rem;
 }
 
 .videoContainer {
@@ -306,6 +346,75 @@ input[type="checkbox"], input[type="radio"] {
   grid-row: 1;
 }
 
+.footer {
+  background: #111111;
+  color: #f2f2f2;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 0rem;
+  margin-left: 4rem;
+}
+
+.footerLogo {
+  margin-top: 5rem;
+  width: 300px;
+}
+
+.footerLogoSize {
+  width: 100%;
+}
+
+.footerIcons {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  height: 25%;
+  grid-row: 2;
+}
+
+.iconResize {
+  width: 20%;
+  height: auto;
+}
+
+.footerIcon {
+  margin: 0 auto;
+  position: relative;
+}
+
+.resizeFooterIcons {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footerMessage {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.letterSpacing {
+  letter-spacing: 0.01rem;
+}
+
+.footerP {
+  margin-top: 0.5rem;
+}
+
+
+
+.copyright{
+  text-align: center;
+  line-height: 1.5;
+  padding-bottom: 2rem;
+  margin-top: -4rem;
+}
 
 .overlayDescription {
   grid-column: 4 / 6;
@@ -383,7 +492,6 @@ input[type="checkbox"], input[type="radio"] {
   height: 30px;
   grid-column: 4 / 9;
   grid-row: 11;
-
 }
 
 
