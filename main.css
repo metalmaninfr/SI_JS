@@ -15,6 +15,11 @@
   font-weight: bold;
 }
 
+::selection {
+  background: #277e7f;
+  color: #fff;
+}
+
 html {
   font-size: 62.5%; /* base de 10 */
 }
@@ -34,14 +39,16 @@ body {
   width: 2rem;
   height: 2rem;
   margin-right: 3rem;
-  z-index: 4;
+  z-index: 11;
 }
 
 .burgerPosition {
   position: fixed;
   top: 3rem;
-  left: 90%;
+  left: 87%;
+  /* animation: cross-ease 0.5s reverse both; */
 }
+
 
 .burger-menu {
   position: absolute;
@@ -51,31 +58,47 @@ body {
   width: 2rem;
   height: 0.3rem;
   background: #fff;
-  z-index: 5;
+  z-index: 12;
 }
 
-.burger-menu::before {
-  content: "";
+.burgerMenuBefore {
   position: absolute;
-  top: -150%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 2rem;
   height: 0.3rem;
   background: #fff;
-  z-index: 5;
+  z-index: 12;
 }
 
-.burger-menu::after {
-  content: "";
+
+.burgerMenuAfter {
   position: absolute;
-  top: 220%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 2rem;
   height: 0.3rem;
   background: #fff;
-  z-index: 5;
+  z-index: 12;
+}
+
+
+.burgerMidDisplay {
+  display: none;
+}
+
+.burgerRotateTop {
+  top: 50%;
+  transform: translate(-50%, -50%) rotateZ(50deg);
+  animation: cross 1s both;
+}
+
+.burgerRotateBot {
+  top: 50%;
+  transform: translate(-50%, -50%) rotateZ(-50deg);
+  animation: cross 1s both;
 }
 
 .header {
@@ -123,7 +146,7 @@ body {
   width: 15%;
   background: #111111;
   color: #f2f2f2;
-  z-index: 9999;
+  z-index: 10;
 }
 
 .closeBurger {
@@ -131,16 +154,38 @@ body {
   animation: slide-in-right 0.5s both;
 }
 
+.seConnecterPosition {
+  margin-top: 3.6rem;
+  margin-left: 8rem;
+}
 
-.menuTitle, .menuGenre, .menuRecent {
+.seConnecter {
+  padding: 0.5rem 0.4rem;
+  border-radius: 25px;
+  background: grey;
+  color: #111;
+  text-decoration: none;
+}
+
+.menuTitle {
   font-size: 1.4rem;
-  margin-top: 3rem;
-  margin-left: 3rem;
+  margin-top: 5rem;
+  margin-left: 2rem;
+}
+
+.menuGenre, .menuRecent {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.menuList {
+  margin-top: 1rem;
 }
 
 .menuListItems {
-  margin-left: 5rem;
-  margin-top: 3rem
+  margin-left: 3rem;
+  margin-top: 0.5rem;
 }
 
 
@@ -431,7 +476,7 @@ input[type="checkbox"], input[type="radio"] {
  top: 0;
  position: fixed;
  margin: 0 auto;
- z-index: 10;
+ z-index: 100;
  background: rgba(0, 0, 0, 0.8);
 }
 
@@ -632,6 +677,28 @@ input[type="checkbox"], input[type="radio"] {
   }
   100% {
     width: 85%;
+    opacity: 1;
+  }
+}
+
+@keyframes cross {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 2rem;
+    opacity: 1;
+  }
+}
+
+@keyframes cross-ease {
+  0% {
+    right: 0;
+    opacity: 0;
+  }
+  100% {
+    right: 5%;
     opacity: 1;
   }
 }
