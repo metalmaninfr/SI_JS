@@ -23,7 +23,7 @@ body {
 .burgerPosition {
   position: fixed;
   top: 3rem;
-  left: 80%;
+  left: 90%;
 }
 
 .burger-menu {
@@ -65,9 +65,12 @@ body {
   position: fixed;
   top: 0%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 50rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20rem;
   margin-top: 2rem;
+  background: #212121;
+  z-index: 9000;
+  width: 100%;
   }
 
 .logo {
@@ -83,10 +86,13 @@ body {
 .search {
   margin-right: 5rem;
   width: 100%;
+  grid-column: 2 / 4;
 }
 
 .searchInput {
-  width: 100%;
+  width: 60%;
+  margin-left: 20rem;
+  margin-top: 1rem;
 }
 
 
@@ -101,6 +107,7 @@ body {
   background: #111111;
   color: #f2f2f2;
   animation: slide-out-right 0.5s both;
+  z-index: 9999;
 }
 
 .closeBurger {
