@@ -50,18 +50,13 @@ for (var i = 0; i < dataMovies.length; i++) {
   authorMovie.textContent = dataMovies[i].author;
   hoverVideoContainer.appendChild(authorMovie);
 
-  var descriptionMovie = document.createElement("div");
-  descriptionMovie.classList.add("descriptionMovie");
-  descriptionMovie.innerHTML = dataMovies[i].description;
-  hoverVideoContainer.appendChild(descriptionMovie);
-
   var playButtonContainer = document.createElement("div");
   playButtonContainer.classList.add("playButtonContainer");
   videoGrid.appendChild(playButtonContainer);
 
   var playButtonImg = document.createElement("img");
   playButtonImg.classList.add("playButtonImg");
-  playButtonImg.setAttribute('src', 'img/play-button.png');
+  playButtonImg.setAttribute('src', 'img/logo_plus.png');
   playButtonContainer.appendChild(playButtonImg);
 }
 

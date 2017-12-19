@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/gotham/Gotham-Light.otf");
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/gotham/Gotham-Bold.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/gotham/Gotham-Thin.otf");
+  font-weight: bold;
+}
+
 html {
   font-size: 62.5%; /* base de 10 */
 }
@@ -8,7 +25,7 @@ body {
 
 .changeSize {
   width: 85%;
-  transition: ease 1s;
+  animation: slide-in-body 0.5s ease;
 }
 
 
@@ -106,7 +123,6 @@ body {
   width: 15%;
   background: #111111;
   color: #f2f2f2;
-  animation: slide-out-right 0.5s both;
   z-index: 9999;
 }
 
@@ -116,26 +132,17 @@ body {
 }
 
 
-.menuTitle {
-  text-align: center;
-  font-size: 3rem;
-}
-
-.menuList {
-  margin-top: 5rem;
+.menuTitle, .menuGenre, .menuRecent {
+  font-size: 1.4rem;
+  margin-top: 3rem;
+  margin-left: 3rem;
 }
 
 .menuListItems {
-  color: #f2f2f2;
-  text-decoration: none;
-  font-size: 1.8rem;
-  font-family: 'gotham' sans-serif;
+  margin-left: 5rem;
+  margin-top: 3rem
 }
 
-.menuListItems li {
-  margin-bottom: 1rem;
-  margin-left: 2rem;
-}
 
 hr {
   width: 80%;
@@ -290,13 +297,23 @@ input[type="checkbox"], input[type="radio"] {
   position: absolute;
   width: 50px;
   height: 50px;
-  top: 30%;
-  left: 45%;
-  transform: translate(-50% -50%);
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .playButtonImg {
   width: 100%;
+}
+
+.authorMovie {
+  font-size: 1.5rem;
+  background: #111;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.5rem;
 }
 
 .hoverVideoContainer {
@@ -322,6 +339,7 @@ input[type="checkbox"], input[type="radio"] {
   transform: translateX(-50%);
   text-align: center;
   width: 40%;
+  line-height: 1.5;
 }
 
 .imgMovieMini {
@@ -369,6 +387,7 @@ input[type="checkbox"], input[type="radio"] {
 .footerIcon {
   margin: 0 auto;
   position: relative;
+  border-right: 3px solid #277e7f;
 }
 
 .resizeFooterIcons {
@@ -526,7 +545,7 @@ input[type="checkbox"], input[type="radio"] {
 
 .overlayDate {
  /* background: green; */
- grid-column: 7 / 9;
+ grid-column: 6 / 9;
  grid-row: 5;
 }
 
@@ -556,7 +575,7 @@ input[type="checkbox"], input[type="radio"] {
   font-size: 1.4rem;
 }
 
-.overlayDescription h3, .overlayComments h3, .overlayTrailer  h3{
+.overlayDescription h3, .overlayComments h3 {
     letter-spacing: 0.2rem;
 }
 
@@ -567,12 +586,33 @@ input[type="checkbox"], input[type="radio"] {
 
 .overlayRating, .overlayDuration, .overlayDate {
   font-size: 1.4rem;
-  margin-top: 1rem;
+}
+
+.overlayRating {
+  margin-left: 5rem;
+  padding-top: 1rem;
+}
+
+.overlayDuration {
+  padding-top: 1rem;
+}
+
+.overlayDate{
+  padding-top: 1rem;
 }
 
 .overlayDescription2 {
-
+  margin-left: 5rem;
+  font-size: 1.4rem;
+  border-top: 5px solid #277e7f;
+  padding-top: 1rem;
 }
+
+.overlayGenre {
+  font-size: 1.4rem;
+  margin-left: 5rem;
+}
+
 
 @keyframes slide-in-right {
   0% {
@@ -581,6 +621,17 @@ input[type="checkbox"], input[type="radio"] {
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-body {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 85%;
     opacity: 1;
   }
 }

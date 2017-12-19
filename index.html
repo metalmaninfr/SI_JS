@@ -103,23 +103,20 @@
 
   <section class="sideMenuDisplay">
     <h2 class="menuTitle">Menu</h2>
-    <ul class="menuList">
-      <a class="menuListItems" href="#">
-        <li>Tendance</li>
-      </a>
-      <a class="menuListItems" href="#">
-        <li>Recent</li>
-      </a>
-      <a class="menuListItems" href="#">
-        <li>Genre</li>
-      </a>
-      <a class="menuListItems" href="#">
-        <li>Favoris</li>
-      </a>
-      <a class="menuListItems" href="#">
-        <li>Contacter</li>
-      </a>
+    <h2 class="menuGenre">Genre</h2>
+    <ul>
+      <li class="menuListItems">#horror</li>
+      <li class="menuListItems">#comédie</li>
+      <li class="menuListItems">#thriller</li>
+      <li class="menuListItems">#fantastique</li>
+      <li class="menuListItems">#aventure</li>
+      <li class="menuListItems">#animation</li>
+      <li class="menuListItems">#enfant</li>
+      <li class="menuListItems">#sport</li>
+      <li class="menuListItems">#documentaire</li>
+      <li class="menuListItems">#loisirs</li>
     </ul>
+  <h2 class="menuRecent">Recent</h2>
   </section>
   <header>
     <div class="header">
@@ -262,11 +259,8 @@
   var body = document.querySelector('.bodyWidth');
 
   burger.addEventListener('click', function(){
-    console.log('lol');
     nav.classList.toggle('closeBurger');
-    console.log('tmi')
     body.classList.toggle('changeSize')
-    console.log('didnt work');
   });
 
 </script>
