@@ -8,7 +8,6 @@
     <title>FanHub</title>
 </head>
 <body>
-  <div class="bodyWidth">
   <section class="sideMenuDisplay">
     <h2 class="menuTitle">Menu</h2>
     <ul class="menuList">
@@ -29,18 +28,20 @@
       </a>
     </ul>
   </section>
+  <header class="header">
+    <div class="logo">
+      <img src="logo.png" alt="">
+    </div>
+    <div class="search">
+      <input type="search" placeholder="Search" class="searchInput">
+    </div>
+    <a class="burger burgerPosition" href="#">
+      <span class="burger-menu"></span>
+    </a>
+  </header>
 
-<header class="header">
-  <div class="logo">
-    <img src="logo.png" alt="">
-  </div>
-  <div class="search">
-    <input type="search" placeholder="Search" class="searchInput">
-  </div>
-  <a class="burger burgerPosition" href="#">
-    <span class="burger-menu"></span>
-  </a>
-</header>
+  <div class="bodyWidth">
+
 
 
 <section>
@@ -59,24 +60,26 @@
 </section>
 
 <section class="genre">
-  <h2 class="genreTitle">Genre</h2>
-  <ul class="genreList">
-    <a class="action tags" href="#">
-      <li>Action</li>
-    </a>
-    <a class="animation tags" href="#">
-      <li>Animation</li>
-    </a>
-    <a class="comedy tags" href="#">
-      <li>Comedy</li>
-    </a>
-    <a class="horror tags" href="#">
-      <li>Horror</li>
-    </a>
-    <a class="thriller tags" href="#">
-      <li>Thriller</li>
-    </a>
-  </ul>
+  <input type="checkbox" id="checkboxHorror checkboxDisplay">
+  <label class="tags horror genreTitle" for="checkboxHorror"> #horror </label>
+  <input type="checkbox" id="checkboxComédie checkboxDisplay">
+  <label class="tags comédie genreTitle" for="checkboxComédie"> #comédie </label>
+  <input type="checkbox" id="checkboxThriller checkboxDisplay">
+  <label class="tags thriller genreTitle" for="checkboxThriller"> #thriller </label>
+  <input type="checkbox" id="checkboxFantastique checkboxDisplay">
+  <label class="tags fantastique genreTitle" for="checkboxFantastique"> #fantastique </label>
+  <input type="checkbox" id="checkboxAventure checkboxDisplay">
+  <label class="tags aventure genreTitle" for="checkboxAventure"> #aventure </label>
+  <input type="checkbox" id="checkboxAnimation checkboxDisplay">
+  <label class="tags animation genreTitle" for="checkboxAnimation"> #animation </label>
+  <input type="checkbox" id="checkboxEnfant checkboxDisplay">
+  <label class="tags enfant genreTitle" for="checkboxEnfant"> #enfant </label>
+  <input type="checkbox" id="checkboxSport checkboxDisplay">
+  <label class="tags sport genreTitle" for="checkboxSport"> #sport </label>
+  <input type="checkbox" id="checkboxDocumentaire checkboxDisplay">
+  <label class="tags documentaire genreTitle" for="checkboxDocumentaire"> #documentaire </label>
+  <input type="checkbox" id="checkboxLoisir checkboxDisplay checkboxDisplay">
+  <label class="tags loisir genreTitle" for="checkboxLoisir"> #loisir </label>
 </section>
 
 <section class="videoContainer allMovies">

@@ -8,6 +8,7 @@ body {
 
 .changeSize {
   width: 85%;
+  transition: ease 1s;
 }
 
 
@@ -99,15 +100,12 @@ body {
   width: 15%;
   background: #111111;
   color: #f2f2f2;
+  animation: slide-out-right 0.5s both;
 }
 
 .closeBurger {
   display: block;
-  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-.sideMenuDisplay {
-  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+  animation: slide-in-right 0.5s both;
 }
 
 
@@ -149,31 +147,34 @@ body {
 
 .genre {
   margin-top: 5rem;
+  grid-template-columns: repeat(7, 1fr);
+  display: grid;
 }
 
 .genreTitle {
   color: #f2f2f2;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
 }
 
-.genreList {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  margin-top: 5rem;
-}
+input [ ]
 
 .tags {
   color: #f2f2f2;
-  text-decoration: none;
 }
 
-.tags li {
+.tags {
   padding: 0.5rem;
   text-align: center;
   border: 1px solid #f2f2f2;
   border-radius: 25px;
 }
+
+input[type="checkbox"], input[type="radio"] {
+  display: none;
+}
+
+
 
 .action {
   grid-column: 6;
@@ -201,6 +202,9 @@ body {
   grid-row: 2;
 }
 
+
+
+
 .videoContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -212,8 +216,20 @@ body {
 .videoGrid {
   height: 400px;
   width: 100%;
-  background-color: grey;
   color: white;
+}
+
+.playButtonContainer {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 30%;
+  left: 45%;
+  transform: translate(-50% -50%);
+}
+
+.playButtonImg {
+  width: 100%;
 }
 
 .hoverVideoContainer {
@@ -241,6 +257,12 @@ body {
   width: 40%;
 }
 
+.imgMovieMini {
+  display: block;
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
 
 
 
