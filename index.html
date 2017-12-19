@@ -8,7 +8,8 @@
     <title>FanHub</title>
 </head>
 <body>
-  <section class="sideMenu">
+  <div class="bodyWidth">
+  <section class="sideMenuDisplay">
     <h2 class="menuTitle">Menu</h2>
     <ul class="menuList">
       <a class="menuListItems" href="#">
@@ -36,6 +37,9 @@
   <div class="search">
     <input type="search" placeholder="Search" class="searchInput">
   </div>
+  <a class="burger burgerPosition" href="#">
+    <span class="burger-menu"></span>
+  </a>
 </header>
 
 
@@ -97,6 +101,30 @@
   <div class="video"></div>
 </section>
 
-<script src="main.js"></script>
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
+  var burger = document.querySelector('.burger');
+  var closeBurger = document.querySelector('.closeBurger');
+  var nav = document.querySelector('.sideMenuDisplay');
+  var changeSize = document.querySelector('.changeSize');
+  var body = document.querySelector('.bodyWidth');
+
+  burger.addEventListener('click', function(){
+    console.log('lol');
+    nav.classList.toggle('closeBurger');
+    console.log('tmi')
+    body.classList.toggle('changeSize')
+    console.log('didnt work');
+  });
+
+</script>
+
+</script>
 </body>
 </html>
