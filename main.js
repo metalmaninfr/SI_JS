@@ -43,7 +43,7 @@ for (var z = 0; z < dataMovies.length; z++) {
     notreSelection.appendChild(imgMovie);
 
     var hoverVideoContainer = document.createElement("div");
-    hoverVideoContainer.classList.add("hoverVideoContainer");
+    hoverVideoContainer.classList.add("hoverVideoContainerSelection");
     notreSelection.appendChild(hoverVideoContainer);
 
     var titleMovie = document.createElement("div");
@@ -53,7 +53,7 @@ for (var z = 0; z < dataMovies.length; z++) {
 
     var plusButtonContainerSelection = document.createElement("div");
     plusButtonContainerSelection.classList.add("plusButtonContainerSelection");
-    notreSelection.appendChild(plusButtonContainerSelection);
+    hoverVideoContainer.appendChild(plusButtonContainerSelection);
 
     var playButtonImg = document.createElement("img");
     playButtonImg.classList.add("playButtonImg");
@@ -81,7 +81,7 @@ for (var i = 0; i < dataMovies.length; i++) {
   videoGrid.appendChild(imgMovie);
 
   var hoverVideoContainer = document.createElement("div");
-  hoverVideoContainer.classList.add("hoverVideoContainer");
+  hoverVideoContainer.classList.add("hoverVideoContainerAllMovies");
   videoGrid.appendChild(hoverVideoContainer);
 
   var titleMovie = document.createElement("div");
@@ -91,7 +91,7 @@ for (var i = 0; i < dataMovies.length; i++) {
 
   var playButtonContainer = document.createElement("div");
   playButtonContainer.classList.add("playButtonContainer");
-  videoGrid.appendChild(playButtonContainer);
+  hoverVideoContainer.appendChild(playButtonContainer);
 
   var playButtonImg = document.createElement("img");
   playButtonImg.classList.add("playButtonImg");
@@ -115,7 +115,7 @@ for (var y = 0; y < dataMovies.length; y++) {
     recentMovie.appendChild(imgMovie);
 
     var hoverVideoContainer = document.createElement("div");
-    hoverVideoContainer.classList.add("hoverVideoContainer");
+    hoverVideoContainer.classList.add("hoverVideoContainerRecent");
     recentMovie.appendChild(hoverVideoContainer);
 
     var titleMovie = document.createElement("div");
@@ -125,7 +125,7 @@ for (var y = 0; y < dataMovies.length; y++) {
 
     var playButtonContainer = document.createElement("div");
     playButtonContainer.classList.add("playButtonContainerRecent");
-    recentMovie.appendChild(playButtonContainer);
+    hoverVideoContainer.appendChild(playButtonContainer);
 
     var playButtonImg = document.createElement("img");
     playButtonImg.classList.add("playButtonImg");
@@ -139,9 +139,11 @@ for (var y = 0; y < dataMovies.length; y++) {
 
 //Séléction des élèments du DOM générés dans l'overlay
 var body = document.querySelector("body");
-var allMoviesPlayButton = document.querySelectorAll(".playButtonContainer");
-var playButtonContainerRecent = document.querySelectorAll(".playButtonContainerRecent");
+var allMoviesPlayButton = document.querySelectorAll(".hoverVideoContainerAllMovies");
+var playButtonContainerRecent = document.querySelectorAll(".hoverVideoContainerRecent");
+var plusButtonContainerSelection = document.querySelectorAll(".hoverVideoContainerSelection");
 var overlayVideo = document.querySelector(".overlayContainer");
+var overlayLowOpacity = document.querySelector(".overlayLowOpacity");
 var retourTitle = document.querySelector(".retourTitle");
 var imgContainer = document.querySelector(".imgContainer");
 var overlayMovieTitle = document.querySelector(".overlayMovieTitle");
@@ -159,9 +161,9 @@ var star4 = document.querySelector(".star4");
 var star5 = document.querySelector(".star5");
 var imgOverlay = document.createElement("img");
 
-//évènement clic sur le bouton retour
-retourTitle.addEventListener("click", function() {
+function overlaySuppr(){
   overlayVideo.style.display = "none";
+  overlayLowOpacity.style.display = "none";
   imgOverlay.classList.remove("imgOverlay");
   star0.style.display = 'none';
   star1.style.display = 'none';
@@ -170,7 +172,20 @@ retourTitle.addEventListener("click", function() {
   star4.style.display = 'none';
   star5.style.display = 'none';
   body.style.overflow = "visible";
+}
+//évènement clic sur le bouton retour
+retourTitle.addEventListener("click", function() {
+overlaySuppr();
 });
+
+//clic sur l'opacité pour quitter la vidéo
+overlayLowOpacity.addEventListener("click", function() {
+overlaySuppr();
+
+
+});
+
+
 
 //fonction qui fait pop l'overlay avec les infos nécéssaires
 function overlayPop(currenta) {
@@ -207,12 +222,20 @@ function overlayPop(currenta) {
   }
 
   overlayVideo.style.display = "block";
+  overlayLowOpacity.style.display = "block";
+
+  document.body.onkeyup = function(e) {
+    if (e.keyCode === 27) {
+      overlaySuppr();
+    }
+  };
+
 }
 
 //évènement clic sur le bouton "plus" des FILMS RECENTS du hover pour apparition de l'Overlay
 for (let c = 0; c < plusButtonContainerSelection.length; c++) {
-  playButtonContainerRecent[c].addEventListener("click", function() {
-    currenta = parseInt(plusButtonContainerSelection[b].parentElement.getAttribute("name"));
+  plusButtonContainerSelection[c].addEventListener("click", function() {
+    currenta = parseInt(plusButtonContainerSelection[c].parentElement.getAttribute("name"));
 
     overlayPop(currenta);
   })
@@ -245,6 +268,18 @@ imgStartPlayer.addEventListener("click", function() {
   lowOpacity.style.display = "block";
   player.setAttribute("src", "videos/" + dataMovies[currenta].src);
   togglePlaying();
+
+
+
+  document.body.onkeyup = function(e) {
+    if (e.keyCode === 27) {
+      playerContainer.style.display = "none";
+      lowOpacity.style.display = "none";
+      player.setAttribute("src", "");
+      overlaySuppr();
+    }
+  };
+
 });
 
 //clic sur l'opacité pour quitter la vidéo
@@ -252,7 +287,12 @@ lowOpacity.addEventListener("click", function() {
   playerContainer.style.display = "none";
   lowOpacity.style.display = "none";
   player.setAttribute("src", "");
+
 });
+
+
+
+
 
 //PLAYER VIDEO
 function togglePlaying() {
