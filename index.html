@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link href="skeleton.css" rel="stylesheet">
-    <link href="main.css" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
+    <link href="main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel="stylesheet">
     <title>FanHub</title>
 </head>
 <body>
@@ -143,11 +144,12 @@
     <hr>
 
 
-    <section class="recentContainer">
-          <h2 class="recentTitle">À l'affiche</h2>
-          <div class="recent">
-          </div>
-        </section>
+    <section class="notreSelectionContainer">
+
+      <h2 class="recentTitle">Notre Séléction</h2>
+      <div class="notreSelection">
+    </div>
+    </section>
 
 <hr>
 
@@ -172,6 +174,8 @@
         <label class="tags documentaire genreTitle" for="checkboxDocumentaire" data-category="Documentary"> #documentaire </label>
         <input type="checkbox" id="checkboxLoisir checkboxDisplay checkboxDisplay">
         <label class="tags loisir genreTitle" for="checkboxLoisir" data-category="Entertainment"> #loisir </label>
+        <input type="checkbox" id="checkboxHorror checkboxDisplay">
+        <label class="tags thriller genreTitle" for="checkboxHorror" data-category="Horror / Thriller"> #thriller </label>
       </div>
     </section>
 
@@ -183,6 +187,12 @@
 
   </div>
 </section>
+<hr>
+<section class="recentContainer">
+  <h2 class="recentTitle">À l'affiche</h2>
+  <div class="recent">
+  </div>
+</section>
 
 <footer class="footer">
 <div class="footerGrid">
@@ -190,13 +200,14 @@
     <img class="footerLogoSize" src="logo.png" alt="">
   </div>
   <div class="footerIcons">
-    <img class="iconResize" src="img/Footer/twitter.png" alt="">
-    <img class="iconResize" src="img/Footer/facebook.png" alt="">
-    <img class="iconResize" src="img/Footer/insta.png" alt="">
+    <i class="fa social fa-facebook" aria-hidden="true"></i>
+    <i class="fa social fa-twitter" aria-hidden="true"></i>
+    <i class="fa social fa-instagram" aria-hidden="true"></i>
   </div>
   <div class="footerIcon">
       <img class="resizeFooterIcons" src="img/Footer/mail.png" alt="">
   </div>
+
   <div class="footerIcon">
     <img class="resizeFooterIcons" src="img/Footer/phone.png" alt="">
   </div>
