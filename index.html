@@ -143,50 +143,37 @@
     <hr>
 
 
-<section class="recentContainer">
-    <h2 class="recentTitle">À l'affiche</h2>
-    <div class="recent">
-    <div class="film1 film">
-
-    </div>
-    <div class="film2 film">
-
-
-    </div>
-    <div class="film3 film">
-
-    </div>
-  </div>
-</section>
+    <section class="recentContainer">
+          <h2 class="recentTitle">À l'affiche</h2>
+          <div class="recent">
+          </div>
+        </section>
 
 <hr>
 
 <section class="genreContainer">
-  <h2 class="genreTitle2">Genre</h2>
-  <div class="genre">
-
-  <input type="checkbox" id="checkboxHorror checkboxDisplay">
-  <label class="tags horror genreTitle" for="checkboxHorror"> #horror </label>
-  <input type="checkbox" id="checkboxComédie checkboxDisplay">
-  <label class="tags comedy genreTitle" for="checkboxComédie"> #comédie </label>
-  <input type="checkbox" id="checkboxThriller checkboxDisplay">
-  <label class="tags thriller genreTitle" for="checkboxThriller"> #thriller </label>
-  <input type="checkbox" id="checkboxFantastique checkboxDisplay">
-  <label class="tags fantastique genreTitle" for="checkboxFantastique"> #fantastique </label>
-  <input type="checkbox" id="checkboxAventure checkboxDisplay">
-  <label class="tags aventure genreTitle" for="checkboxAventure"> #aventure </label>
-  <input type="checkbox" id="checkboxAnimation checkboxDisplay">
-  <label class="tags animation genreTitle" for="checkboxAnimation"> #animation </label>
-  <input type="checkbox" id="checkboxEnfant checkboxDisplay">
-  <label class="tags enfant genreTitle" for="checkboxEnfant"> #enfant </label>
-  <input type="checkbox" id="checkboxSport checkboxDisplay">
-  <label class="tags sport genreTitle" for="checkboxSport"> #sport </label>
-  <input type="checkbox" id="checkboxDocumentaire checkboxDisplay">
-  <label class="tags documentaire genreTitle" for="checkboxDocumentaire"> #documentaire </label>
-  <input type="checkbox" id="checkboxLoisir checkboxDisplay checkboxDisplay">
-  <label class="tags loisir genreTitle" for="checkboxLoisir"> #loisir </label>
-</div>
-</section>
+      <h2 class="genreTitle2">Genre</h2>
+      <div class="genre">
+        <input type="checkbox" id="checkboxHorror checkboxDisplay">
+        <label class="tags horror genreTitle" for="checkboxHorror" data-category="Horror / Thriller"> #horror </label>
+        <input type="checkbox" id="checkboxComédie checkboxDisplay">
+        <label class="tags comedy genreTitle" for="checkboxComédie" data-category="Comedy"> #comédie </label>
+        <input type="checkbox" id="checkboxFantastique checkboxDisplay">
+        <label class="tags fantastique genreTitle" for="checkboxFantastique" data-category="Fantastique"> #fantastique </label>
+        <input type="checkbox" id="checkboxAventure checkboxDisplay">
+        <label class="tags aventure genreTitle" for="checkboxAventure" data-category="Aventure"> #aventure </label>
+        <input type="checkbox" id="checkboxAnimation checkboxDisplay">
+        <label class="tags animation genreTitle" for="checkboxAnimation" data-category="Animation"> #animation </label>
+        <input type="checkbox" id="checkboxEnfant checkboxDisplay">
+        <label class="tags enfant genreTitle" for="checkboxEnfant" data-category="Children"> #enfant </label>
+        <input type="checkbox" id="checkboxSport checkboxDisplay">
+        <label class="tags sport genreTitle" for="checkboxSport" data-category="Sport"> #sport </label>
+        <input type="checkbox" id="checkboxDocumentaire checkboxDisplay">
+        <label class="tags documentaire genreTitle" for="checkboxDocumentaire" data-category="Documentary"> #documentaire </label>
+        <input type="checkbox" id="checkboxLoisir checkboxDisplay checkboxDisplay">
+        <label class="tags loisir genreTitle" for="checkboxLoisir" data-category="Entertainment"> #loisir </label>
+      </div>
+    </section>
 
 <hr>
 
@@ -252,6 +239,40 @@
   <p class="copyright">Groupe 23 <br> CopyRight 2017</p>
 </footer>
 
+<!-- PLAYER -->
+
+<div class="lowOpacity">
+</div>
+<div class="player-container">
+  <video class="video-player">
+  </video>
+
+  <div class="media-controls">
+    <div class="buffer">
+      <div class=" slider">
+        <div class="cursor"></div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <div class="buttonsLeft">
+        <div class="play"><img src="img/play.png" alt="play"></div>
+        <div class="stop"><img src="img/stop.png" alt="stop"></div>
+        <div class="volumeSlider">
+          <img class="volume-img" src="img/volume.png" alt="volume">
+          <input class="volume" type="range" min="0" max="1" step="0.01" value="0.5">
+        </div>
+        <div class=" duration">00:00 / 00:00</div>
+      </div>
+
+      <div class="buttonsRight">
+        <div class="fullScreen-button"><img src="img/full_screen.png" alt="Full Screen"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PLAYER -->
 
 
 

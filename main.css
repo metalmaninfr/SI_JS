@@ -156,13 +156,13 @@ body {
 
 .seConnecterPosition {
   margin-top: 3.6rem;
-  margin-left: 8rem;
+  margin-left: 7.5rem;
 }
 
 .seConnecter {
-  padding: 0.5rem 0.4rem;
+  padding: 0.6rem 1rem;
   border-radius: 25px;
-  background: grey;
+  background: rgb(195,195,195);
   color: #111;
   text-decoration: none;
 }
@@ -218,9 +218,9 @@ hr {
 
 
 .film {
-    height: 230px;
-    width: 100%;
-    background: grey;
+  height: 230px;
+  width: 100%;
+  position: relative;
 }
 
 .genreContainer {
@@ -336,6 +336,15 @@ input[type="checkbox"], input[type="radio"] {
   height: 400px;
   width: 100%;
   color: white;
+}
+
+.playButtonContainerRecent {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .playButtonContainer {
@@ -538,43 +547,45 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .overlayStars {
- grid-row: 4;
- grid-column: 7 / 9;
+  grid-row: 4;
+  grid-column: 7 / 9;
 }
 
 .stars {
- position: relative;
- top: 15%;
+  position: relative;
+  top: 15%;
 }
 
 .star0 {
- display: none;
+  display: none;
 }
 
 .star1 {
- display: none;
+  display: none;
 }
 
 .star2 {
- display: none;
+  display: none;
 }
 
 .star3 {
- display: none;
+  display: none;
 }
 
 .star4 {
- display: none;
+  display: none;
 }
 
 .star5 {
- display: none;
+  display: none;
 }
 
 .starRating {
- margin-left: 10px;
- width: auto;
+  margin-left: 10px;
+  width: 20px;
+  height: auto;
 }
+
 
 .overlayRating {
  /* background: blue; */
@@ -651,11 +662,196 @@ input[type="checkbox"], input[type="radio"] {
   font-size: 1.4rem;
   border-top: 5px solid #277e7f;
   padding-top: 1rem;
+  line-height: 1.5;
 }
 
 .overlayGenre {
   font-size: 1.4rem;
   margin-left: 5rem;
+}
+
+
+/*PLAYER VIDEO*/
+
+.player-container {
+  display: none;
+  z-index: 15;
+  --width: 800px;
+  width: var(--width);
+  height: calc(var(--width) / 16 * 9);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lowOpacity {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.video-player {
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+}
+
+.player-container .media-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2147483647;
+}
+
+img {
+  width: 15px;
+}
+
+.buttons {
+  margin: 0 auto;
+  width: 100%;
+  height: 30px;
+  background-color: #212121;
+  opacity: 0.95;
+  display: flex;
+  justify-content: space-between;
+  z-index: 20;
+}
+
+.buttonsLeft {
+  display: flex;
+}
+
+.buttonsRight {
+  display: flex;
+}
+
+.play, .stop {
+  margin: 5px 25px 0 0;
+}
+
+.play {
+  margin-left: 20px;
+}
+
+.volumeSlider {
+  margin-right: 30px;
+  height: 50%;
+}
+
+.volumeSlider .volume-img {
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.volume {
+  margin: auto;
+  height: 100%;
+  background: transparent;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 5px;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  margin-top: -4px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 15px;
+  width: 16px;
+  border-radius: 3px;
+  background: #528D93;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  /* Add cool effects to your sliders! */
+}
+
+.duration {
+  color: white;
+  margin-top: 5px;
+}
+
+.fullScreen-button {
+  margin: 7px 20px 0 0;
+}
+
+.buffer {
+  width: 100%;
+}
+
+.slider {
+  width: 100%;
+  height: 10px;
+  background-color: #B7B7B7;
+}
+
+.cursor {
+  width: 1px;
+  height: 10px;
+  background-color: #528D93;
+  transition: margin-left .1s linear;
+}
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+.dimmed {
+  opacity: 0.5;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.hidden {
+  animation: fadeOut .5s ease forwards;
+}
+
+/*PLAYER VIDEO*/
+
+/*TAG*/
+
+.tag-highlight {
+  background-color: #528D93;
 }
 
 

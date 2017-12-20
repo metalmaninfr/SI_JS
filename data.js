@@ -2,7 +2,7 @@ var data = {
   categories: ['Action', 'Animation', 'Comedy', 'Horror / Thriller'],
   max_rating: 5,
   films: [{
-    src: 'video/TIE+Fighter+-+short+film(720p).mp4',
+    src: 'TIE+Fighter+-+short+film(720p).mp4',
     img: 'TIE+Fighter+-+short+film(720p).jpg',
     title: 'TIE Fighter - short film',
     duration: '7:27',
