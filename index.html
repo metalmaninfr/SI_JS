@@ -119,11 +119,11 @@
         <input type="search" placeholder="Search" class="searchInput">
       </div>
     </div>
-    <a class="burger burgerPosition" href="#">
+    <span class="burger burgerPosition">
     <span class="burger-menu burgerMenuBefore"></span>
     <span class="burger-menu burgerMid"></span>
     <span class="burger-menu burgerMenuAfter"></span>
-  </a>
+  </span>
 
   </header>
 
@@ -222,7 +222,7 @@
           <p class="footerP">Rejoins-Nous !</p>
         </div>
       </div>
-      <p class="copyright">Groupe 23 <br> CopyRight 2017</p>
+      <p class="copyright">Groupe 23 CopyRight 2017</p>
     </footer>
 
     <!-- PLAYER -->
@@ -272,6 +272,10 @@
     var burgerBot = document.querySelector('.burgerMenuAfter');
     var burgerRotateBot = document.querySelector('.burgerRotateBot');
     var burgerPosition = document.querySelector('.burgerPosition');
+    var menuBodySlideOut = document.querySelector('.menuBodySlideOut ');
+    var menuBodySlideOut = document.querySelector('.menuBodySlideIn');
+    var burgerMenuSlideOut = document.querySelector('.burgerMenuSlideOut');
+    var burgerMenuSlideIn = document.querySelector('.burgerMenuSlideIn');
 
     burger.addEventListener('click', function() {
       nav.classList.toggle('closeBurger');
@@ -282,6 +286,14 @@
 
       nav.dataset.options = 'scrolltop: false;';
 
+      if (nav.classList.contains('closeBurger') === false ) {
+        changeSize.classList.remove('menuBodySlideOut');
+        closeBurger.classList.remove('burgerMenuSlideOut');
+      }
+      else {
+        changeSize.classList.add('menuBodySlideOut');
+        closeBurger.classList.add('burgerMenuSlideOut');
+      };
     });
 
   </script>
