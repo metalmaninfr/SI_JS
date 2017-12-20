@@ -399,9 +399,14 @@ function toggleFullscreen() {
     }
 
     playerContainer.classList.add('fullscreen');
-    fullScreen.querySelector("img").src = "img/shrink.png";
+
+
+    if (playerContainer.classList.contains('fullscreen')){
+      fullScreen.querySelector("img").src = "img/shrink.png";
+    }
 
   }
+
 }
 
 player.addEventListener('dblclick', toggleFullscreen);
@@ -422,7 +427,7 @@ player.addEventListener('timeupdate', function() {
   const trackWidth = slider.getBoundingClientRect().width;
   const coeff = player.currentTime / player.duration;
   cursor.style.width = (coeff * trackWidth) + 'px';
-  timeLeft.innerHTML = formatTime(player.currentTime % 60) + '/' + formatTime(player.duration);
+  timeLeft.innerHTML = formatTime(player.currentTime) + '/' + formatTime(player.duration);
 
 
   // Check if video ended
@@ -516,3 +521,45 @@ for (let i = 0; i < tags.length; i++) {
 }
 
 //tags
+
+//ANIMATION menu
+
+var menuItem1 = document.querySelector(".menuTitle");
+var menuItem2 = document.querySelector(".menuGenre");
+var menuItem3 = document.querySelector(".menuRecent");
+var menuItem4 = document.querySelector(".menuAffiche");
+
+var section1 = document.querySelector(".notreSelectionContainer");
+var section2 = document.querySelector(".genreContainer");
+var section3 = document.querySelector(".containerVideo");
+var section4 = document.querySelector(".recentContainer");
+var footer = document.querySelector("footer");
+
+window.addEventListener("scroll", function() {
+  if (section1.getBoundingClientRect().top < section1.offsetHeight) {
+    menuItem1.classList.add("scrollHover");
+    menuItem2.classList.remove("scrollHover");
+    menuItem3.classList.remove("scrollHover");
+    menuItem4.classList.remove("scrollHover");
+  }
+  if (section2.getBoundingClientRect().top < section2.offsetHeight && section3.getBoundingClientRect().top > section2.offsetHeight) {
+    menuItem2.classList.add("scrollHover");
+    menuItem1.classList.remove("scrollHover");
+    menuItem3.classList.remove("scrollHover");
+    menuItem4.classList.remove("scrollHover");
+  }
+  if (section3.getBoundingClientRect().top < section4.offsetHeight && section4.getBoundingClientRect().top > section3.offsetHeight) {
+    menuItem3.classList.add("scrollHover");
+
+    menuItem1.classList.remove("scrollHover");
+    menuItem2.classList.remove("scrollHover");
+    menuItem4.classList.remove("scrollHover");
+  }
+  if (section4.getBoundingClientRect().top < section3.offsetHeight) {
+    console.log(section4.getBoundingClientRect().top);
+    menuItem4.classList.add("scrollHover");
+    menuItem1.classList.remove("scrollHover");
+    menuItem2.classList.remove("scrollHover");
+    menuItem3.classList.remove("scrollHover");
+  }
+});

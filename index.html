@@ -104,8 +104,8 @@
 
 
   <section class="sideMenuDisplay">
-    <h2 class="menuTitle">Notre Sélection</h2>
-    <h2 class="menuGenre">Genre</h2>
+    <a href="#Selection"><h2 class="menuTitle">Notre Sélection</h2></a>
+  <a href="#genre"><h2 class="menuGenre">Genre</h2></a>
     <ul class="menuList">
       <li class="menuListItems">#horror</li>
       <li class="menuListItems">#comédie</li>
@@ -118,8 +118,8 @@
       <li class="menuListItems">#documentaire</li>
       <li class="menuListItems">#loisirs</li>
     </ul>
-  <h2 class="menuRecent">Recent</h2>
-  <h2 class="menuAffiche">À l'affiche</h2>
+  <a href="#allVideo"><h2 class="menuRecent">Recent</h2></a>
+  <a href="#recent"><h2 class="menuAffiche">À l'affiche</h2></a>
   </section>
   <header>
     <div class="header">
@@ -143,8 +143,7 @@
     <hr>
 
 
-    <section class="notreSelectionContainer">
-
+    <section class="notreSelectionContainer" id="Selection">
       <h2 class="recentTitle">Notre Séléction</h2>
       <div class="notreSelection">
     </div>
@@ -152,8 +151,8 @@
 
 <hr>
 
-<section class="genreContainer">
-      <h2 class="genreTitle2">Genre</h2>
+<section class="genreContainer" id="genre">
+      <h2 class="genreTitle2">Tous Nos Genres</h2>
       <div class="genre">
         <input type="checkbox" id="checkboxHorror checkboxDisplay">
         <label class="tags horror genreTitle" for="checkboxHorror" data-category="Horror / Thriller"> #horreur </label>
@@ -180,15 +179,15 @@
 
 <hr>
 
-<section class="containerVideo">
-  <h2 class="videoTitle2">Recent</h2>
+<section class="containerVideo" id="allVideo">
+  <h2 class="videoTitle2">Nos Vidéos</h2>
   <div class="videoContainer allMovies">
 
   </div>
 </section>
 <hr>
-<section class="recentContainer">
-  <h2 class="recentTitle">À l'affiche</h2>
+<section class="recentContainer" id="recent">
+  <h2 class="recentTitle">Nos Films Récents</h2>
   <div class="recent">
   </div>
 </section>

@@ -12,6 +12,11 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .changeSize {
   width: 85%;
   animation: slide-in-body 0.5s ease;
@@ -501,7 +506,7 @@ input[type="checkbox"], input[type="radio"] {
   text-align: center;
   line-height: 1.5;
   padding-bottom: 2rem;
-  margin-top: -4rem;
+  margin-top: 2rem;
 }
 
 
@@ -913,6 +918,14 @@ video::-webkit-media-controls {
   background-color: #528D93;
 }
 
+
+.scrollHover {
+  background: rgba(33,33,33, 0.5);
+  border-left: 3px solid #277E7F;
+  margin-left: 0rem;
+  padding: 1rem 0;
+  padding-left: 2rem;
+}
 
 @keyframes slide-in-right {
   0% {
