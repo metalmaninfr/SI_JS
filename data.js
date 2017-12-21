@@ -250,3 +250,5 @@ var data = {
     category: 'Action'
   }, ]
 };
+
+module.exports = data;
